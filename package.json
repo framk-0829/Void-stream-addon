@@ -4,7 +4,7 @@
   "private": true,
   "description": "Custom Nuvio-compatible Stremio addon for public-domain and user-authorized media",
   "type": "module",
-  "scripts": { "start": "node src/server.js", "dev": "node --watch src/server.js" },
+  "scripts": { "start": "node server.js", "dev": "node --watch server.js" },
   "dependencies": { "dotenv": "^16.4.7", "express": "^4.21.2" },
   "engines": { "node": ">=20" }
 }
