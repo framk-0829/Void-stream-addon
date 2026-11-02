@@ -103,7 +103,7 @@ app.get("/stream/:type/:id.json", async (req, res) => {
     return aScore - bScore || (a.test.ms ?? 99999) - (b.test.ms ?? 99999);
   });
   const streams = available.map((s, i) => ({
-    name: `${s.name || s.server || "Authorized source"}${i === 0 && s.test.ok ? " • FASTEST TESTED" : ""}`,
+        name: `${s.name || s.server || "Authorized source"} • Audio: ${(s.audio || []).join("/") || "Unknown"} • Subs: ${(s.subtitles || []).map(x => x.lang).join("/") || "Unknown"} • ${s.quality || "Quality unknown"}${i === 0 && s.test.ok ? " • FASTEST TESTED" : ""}`,
     title: `${s.quality || "Quality unknown"} • ${languageLabel(s)} • ${s.test.ms == null ? "Latency unknown" : `${s.test.ms} ms response`} • ${s.test.ok ? "Responding" : "Unverified / unavailable"}`,
     url: s.url,
     behaviorHints: { notWebReady: false }
